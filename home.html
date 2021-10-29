@@ -87,19 +87,21 @@
         }
           
         function haut() {
-            laby.splice(0,1,"b")
+            laby.splice(4,1,[m,p,b,b,m,b,m,m,b,m])
+            laby.splice(5,1,[m,b,m,b,m,b,b,b,b,f])
+            afficheLaby();
         }
 
         function droite() {
-            xperso++
+            afficheLaby();
         }
 
         function gauche(){
-            xperso--
+            afficheLaby();
         }
 
         function bas() {
-            yperso++
+            afficheLaby();
         }
     </script>
  
