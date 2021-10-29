@@ -23,8 +23,8 @@
         b='b'; //représente le chemin
         f="f"; //représente le trophée 
 
-        xperso=1; //position initial du personnage sur l'axe X
-        yperso=5; //postition initial du personnage sur l'axe Y
+        xperso=5; //position initial du personnage sur l'axe X
+        yperso=1; //postition initial du personnage sur l'axe Y
         //tableau à double entrée représentant votre labyrinthe, vous pouvez le modifier pour comprendre le fonctionnement
         var laby = [[m,b,b,b,b,b,b,b,b,m],
                     [m,b,m,m,m,m,m,b,m,m],
@@ -83,22 +83,75 @@
             leLaby.innerHTML=insertion;
         }
           
-        function haut() {
-            laby.splice(4,1,[m,p,b,b,m,b,m,m,b,m])
-            laby.splice(5,1,[m,b,m,b,m,b,b,b,b,f])
+       function bas()
+        {
+         
+            if(laby[xperso+1][yperso]==b){
+            laby[xperso][yperso]=b;
+            laby[xperso+1][yperso]=p;
+            xperso=xperso+1;
+            }
+            else
+            {
+            laby[xperso+1][yperso]=r
+            }
+         
             afficheLaby();
         }
-
-        function droite() {
+         
+        function haut()
+        {
+         
+            if(laby[xperso-1][yperso]==b){
+            laby[xperso][yperso]=b;
+            laby[xperso-1][yperso]=p;
+            xperso=xperso-1;
+            }
+            else
+            {
+            laby[xperso-1][yperso]=r
+         
+        }
             afficheLaby();
         }
+         
+        function droite()
+        {
+         
+            if(laby[xperso][yperso+1]==b){
+            laby[xperso][yperso]=b;
+            laby[xperso][yperso+1]=p;
+            yperso=yperso+1;
+            }
 
-        function gauche(){
+            else if(laby[xperso][yperso+1]==f){
+                alert("VOUS AVEZ GAGNER GG!!")
+            }
+        else
+            {
+            laby[xperso][yperso+1]=r
+            }
+         
             afficheLaby();
         }
-
-        function bas() {
+         
+        function gauche()
+        {
+         
+            if(laby[xperso][yperso-1]==b){
+            laby[xperso][yperso]=b;
+            laby[xperso][yperso-1]=p;
+            yperso=yperso-1;
+            }
+        else
+            {
+            laby[xperso][yperso-1]=r
+            }
+         
             afficheLaby();
+        }
+        if(p==f){
+            alert("vous avez gagner")
         }
     </script>
  
